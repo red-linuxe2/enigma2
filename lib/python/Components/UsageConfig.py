@@ -465,6 +465,55 @@ def InitUsageConfig():
 	config.usage.recording_frontend_priority_strictly = ConfigSelection(default="no", choices=priority_strictly_choices)
 	config.usage.recording_frontend_priority_intval = NoSave(ConfigInteger(default=0, limits=(-99, maxsize)))
 	config.misc.disable_background_scan = ConfigYesNo(default=False)
+	
+	config.usage.animation_type = ConfigSelection(default='sbtt', choices=[
+     		('srtl', _('Slide right to left')),
+		('sltr', _('Slide left to right')),
+		('sttb', _('Slide top to bottom')),
+		('sbtt', _('Slide bottom to top')),
+		('sltctrbc', _('Slide left top corner to right bottom corner')),
+		('srbctltc', _('Slide right bottom corner to left top corner'))])
+	def chaneAnimationType(configElement):
+		if config.usage.animation_type.value == 'sbtt':
+			config.usage.addedinfobar_offposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_offposition_y = ConfigNumber(default=1080)
+			config.usage.addedinfobar_standartposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_y = ConfigNumber(default=0)
+		elif config.usage.animation_type.value == 'sttb':
+			config.usage.addedinfobar_offposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_offposition_y = ConfigNumber(default=-1080)
+			config.usage.addedinfobar_standartposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_y = ConfigNumber(default=0)
+		elif config.usage.animation_type.value == 'srtl':
+			config.usage.addedinfobar_offposition_x = ConfigNumber(default=-1920)
+			config.usage.addedinfobar_offposition_y = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_y = ConfigNumber(default=0)
+		elif config.usage.animation_type.value == 'sltr':
+			config.usage.addedinfobar_offposition_x = ConfigNumber(default=1920)
+			config.usage.addedinfobar_offposition_y = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_y = ConfigNumber(default=0)
+		elif config.usage.animation_type.value == 'sltctrbc':
+			config.usage.addedinfobar_offposition_x = ConfigNumber(default=-1080)
+			config.usage.addedinfobar_offposition_y = ConfigNumber(default=-1920)
+			config.usage.addedinfobar_standartposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_y = ConfigNumber(default=0)
+		elif config.usage.animation_type.value == 'srbctltc':
+			config.usage.addedinfobar_offposition_x = ConfigNumber(default=1080)
+			config.usage.addedinfobar_offposition_y = ConfigNumber(default=1920)
+			config.usage.addedinfobar_standartposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_y = ConfigNumber(default=0)
+		else:
+			config.usage.addedinfobar_offposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_offposition_y = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_x = ConfigNumber(default=0)
+			config.usage.addedinfobar_standartposition_y = ConfigNumber(default=0)
+        config.misc.query_restart.value = True
+
+	config.usage.animation_type.addNotifier(chaneAnimationType)
+	config.usage.infobar_offposition = ConfigNumber(default=720)
+	config.usage.infobar_standartposition = ConfigNumber(default=510)
 
 	config.usage.menutype = ConfigSelection(default='standard', choices=[('horzanim', _('Horizontal menu')), ('horzicon', _('Horizontal icons')), ('standard', _('Standard menu'))])
 
