@@ -113,6 +113,12 @@
 		<item level="2" text="Show VCR scart on main menu" description="When enabled, the VCR scart option will be shown on the main menu" requires="ScartSwitch">config.usage.show_vcr_scart</item>
 		<item level="2" text="Show True/False as graphical switch" description="Enable to display all true/false, yes/no, on/off and enable/disable set up options as a graphical switch.">config.usage.boolean_graphic</item>
 		<item level="2" text="Show additional slider value" description="Enable the current value of the slider at end of the slider bar.">config.usage.show_slider_value</item>
+		<item level="0" text="Animation type" description="Choose how the screens will smoothly slides on the screen." >config.usage.animation_type</item>
+		<item level="0" text="Enable animation for infobar" description="When enabled, infobar will smoothly slides on the screen." >config.misc.enableAnimationInfobar</item>
+		<item level="0" text="Enable animation for moviebar" description="When enabled, movie infobar will smoothly slides on the screen." >config.misc.enableAnimationInfobarMovie</item>
+		<item level="0" text="Enable animation for menus" description="When enabled, additional infobar will smoothly slides on the screen." >config.misc.enableAnimationMenuScreens</item>
+		<item level="0" text="Enable animation for channel selection" description="When enabled, channel selection will smoothly slides on the screen." >config.misc.enableAnimationChSelection</item>
+		<item level="0" text="Menu animation quickly -/+ smoothly" description="Configure balance of quickly/smoothly of the animation cursor menu.">config.skin.runningStep</item>
 	</setup>
 	<setup key="channelselection" title="Channel selection settings">
 		<item level="0" text="Include CI assignment" description="Set CI assignment for detection of available services.">config.misc.use_ci_assignment</item>
