@@ -48,6 +48,23 @@ class Screen(dict):
 		self["ScreenPath"] = StaticText()
 		self.screenPath = ""  # This is the current screen path without the title.
 		self.screenTitle = ""  # This is the current screen title without the path.
+		if config.misc.enableAnimationMenuScreens.value:
+			self.onShow.append(self.animateMenuOnShow)
+		return
+
+	def animateMenuOnShow(self):
+		try:
+			if self.skinName[0] == 'MessageBox' or self.skinName[0] == 'MessageBoxSimple' or self.skinName[0] == 'EPGSearch' or self.skinName[0].endswith('_summary') or self.skinName[0].endswith('Summary'):
+				return
+		except:
+			pass
+
+		if config.misc.enableAnimationMenuScreens.value and self.skinName not in ('PictureInPicture', 'PictureInPictureZapping', 'Dishpip', 'InfoBar', 'SecondInfoBar', 'MoviePlayer', 'SimpleSummary', 'MessageBox_summary', 'MessageBox', 'UnhandledKey', 'QuitMainloopScreen', 'Volume', 'ChannelSelection', 'QuickSubtitlesConfigMenu', 'EMCMediaCenter', 'PVRState', 'TimeshiftState', 'SmartConsole', 'Screensaver', 'SubtitleDisplay', 'RdsInfoDisplay', 'Console', 'MessageBoxSimple', 'IPTVPlayerWidget'):
+			start_x = config.usage.addedinfobar_offposition_x.value
+			start_y = config.usage.addedinfobar_offposition_y.value
+			end_x = config.usage.addedinfobar_standartposition_x.value
+			end_y = config.usage.addedinfobar_standartposition_y.value
+			self.instance.startMoveAnimation(ePoint(start_x, start_y), ePoint(end_x, end_y), -9, 1, 10)
 
 	def __repr__(self):
 		return str(type(self))
