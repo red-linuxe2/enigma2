@@ -505,6 +505,10 @@ void eWidgetDesktop::redrawComposition(int notified)
 	for (ePtrList<eWidget>::iterator i(m_root.begin()); i != m_root.end(); ++i)
 		if (i->m_animation.m_active)
 			i->m_animation.tick(1);
+	
+	for (ePtrList<eWidget>::iterator i(m_root.begin()); i != m_root.end(); ++i)
+		if (i->m_animation.m_active)
+			i->m_animation.nexttick(1);
 }
 
 void eWidgetDesktop::notify()
