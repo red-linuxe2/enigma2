@@ -21,9 +21,13 @@ void eWidgetAnimation::tick(int inc)
 		}
 
 		m_move_start = m_widget->position();
+		m_move_stop = m_widget->position();
 
 		int xdiff = m_move_start.x() - m_move_end.x();
 		int ydiff = m_move_start.y() - m_move_end.y();
+		
+		int xdiff = m_move_stop.x() - m_move_end.x();
+		int ydiff = m_move_stop.y() - m_move_end.y();
 
 		xdiff *= 31; xdiff /= 32;
 		ydiff *= 31; ydiff /= 32;
@@ -93,13 +97,13 @@ void eWidgetAnimation::startMoveAnimation(ePoint start, ePoint end, int length)
 	m_widget->move(m_move_start);
 }
 
-void eWidgetAnimation::stopMoveAnimation(ePoint start, ePoint end, int length)
+void eWidgetAnimation::stopMoveAnimation(ePoint stop, ePoint end, int length)
 {
  	m_move_current_tick = 0;
  	m_move_current_nexttick = 0;
  	m_move_length = length;
- 	m_move_start = start;
+ 	m_move_stop = stop;
  	m_move_end = end;
  	m_active = 1;
- 	m_widget->move(m_move_start);
+ 	m_widget->move(m_move_stop);
 }
