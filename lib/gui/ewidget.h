@@ -40,10 +40,8 @@ public:
 	void raise();
 	void lower();
 	
-	void animationEnd();
 	void startMoveAnimation();
-	void stopMoveAnimation();
-
+	
 	void destruct();
 
 	SWIG_VOID(int) getStyle(ePtr<eWindowStyle> &SWIG_NAMED_OUTPUT(style)) { if (!m_style) return 1; style = m_style; return 0; }
