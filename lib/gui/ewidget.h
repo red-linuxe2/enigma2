@@ -99,6 +99,9 @@ private:
 	int m_z_position;
 	int m_lowered;
 	int m_notify_child_on_position_change;
+	int m_move_current_tick, m_move_current_nexttick, m_move_length;
+// 	int m_move_current_nexttick, m_move_length;
+	ePoint m_move_start, m_move_end;
 protected:
 	void mayKillFocus();
 public:
