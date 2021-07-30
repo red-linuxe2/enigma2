@@ -1,6 +1,8 @@
 #include <lib/gui/ewidget.h>
 #include <lib/gui/ewidgetdesktop.h>
 #include <lib/gui/ewidgetanimation.h>
+#include <lib/gdi/esize.h>
+#include <lib/gdi/epoint.h>
 
 extern void dumpRegion(const gRegion &region);
 
@@ -13,6 +15,8 @@ eWidget::eWidget(eWidget *parent): m_animation(this), m_parent(parent ? parent->
 	m_z_position = 0;
 	m_lowered = 0;
 	m_client_offset = eSize(0, 0);
+	m_move_current_tick = m_move_length;
+	m_move_current_nexttick = m_move_length;
 	if (m_parent)
 		m_vis = wVisShow;
 	if (m_parent)
