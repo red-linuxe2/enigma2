@@ -40,7 +40,7 @@ public:
 	void raise();
 	void lower();
 	
-	void startMoveAnimation();
+	void startMoveAnimation(ePoint start, ePoint end, int length);
 	
 	void destruct();
 
