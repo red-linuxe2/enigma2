@@ -4,6 +4,8 @@
 #include <lib/gui/ewindowstyle.h>
 #include <lib/gui/ewindowstyleskinned.h>
 
+#include <lib/gui/ewidgetanimation.h>
+
 #include <lib/gdi/epng.h>
 
 eWindow::eWindow(eWidgetDesktop *desktop, int z): eWidget(0)
@@ -140,13 +142,3 @@ void eWindow::setAnimationMode(int mode)
 	m_animation_mode = mode;
 }
 
-void eWidgetAnimation::startMoveAnimation(ePoint start, ePoint end, int length)
-{
-	m_move_current_tick = 0;
-	m_move_current_nexttick = 0;
-	m_move_length = length;
-	m_move_start = start;
-	m_move_end = end;
-	m_active = 1;
-	m_widget->move(m_move_start);
-}
