@@ -15,8 +15,7 @@ public:
 	void nexttick(int inc);
 
 	void startMoveAnimation(ePoint start, ePoint end, int length);
- 	void stopMoveAnimation(ePoint stop, ePoint end, int length);
-
+ 	
 	int m_active;
 private:
 	int m_move_current_tick, m_move_current_nexttick, m_move_length;
