@@ -19,6 +19,8 @@ public:
 
 	void move(ePoint pos);
 	void resize(eSize size);
+	
+	int m_active;
 
 	ePoint position() const { return m_position; }
 	eSize size() const { return m_size; }
@@ -102,6 +104,7 @@ private:
 	int m_move_current_tick, m_move_current_nexttick, m_move_length;
 // 	int m_move_current_nexttick, m_move_length;
 	ePoint m_move_start, m_move_end;
+	eWidget *m_widget;
 protected:
 	void mayKillFocus();
 public:
