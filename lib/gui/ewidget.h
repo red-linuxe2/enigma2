@@ -4,7 +4,7 @@
 #include <lib/gdi/grc.h> /* for gRegion */
 #include <lib/base/eptrlist.h> /* for eSmartPtrList */
 #include <lib/gui/ewindowstyle.h> /* for eWindowStyle */
-#include <lib/gui/ewidgetanimation.h>
+//#include <lib/gui/ewidgetanimation.h>
 
 #define MAX_LAYER 16
 
@@ -39,6 +39,8 @@ public:
 
 	void raise();
 	void lower();
+	
+	void animationEnd();
 
 	void destruct();
 
