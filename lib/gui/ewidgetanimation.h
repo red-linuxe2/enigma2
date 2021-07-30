@@ -21,7 +21,7 @@ public:
 private:
 	int m_move_current_tick, m_move_current_nexttick, m_move_length;
 // 	int m_move_current_nexttick, m_move_length;
-	ePoint m_move_start, m_move_end;
+	ePoint m_move_start, m_move_end, m_move_stop;
 	eWidget *m_widget;
 };
 
