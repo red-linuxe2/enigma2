@@ -354,16 +354,15 @@ void eWidget::parentRemoved()
 	m_parent = 0;
 }
 
-// void eWidgetAnimation::startMoveAnimation(ePoint start, ePoint end, int length)
-// {
-// 	m_move_current_tick = 0;
-// 	m_move_current_nexttick = 0;
-// 	m_move_length = length;
-// 	m_move_start = start;
-// 	m_move_end = end;
-// 	m_active = 1;
-// 	m_widget->move(m_move_start);
-// }
+void eWidgetAnimation::animationEnd(ePoint end, int length)
+{
+ 	m_move_current_tick = 0;
+ 	m_move_current_nexttick = 0;
+ 	m_move_length = length;
+ 	m_move_end = end;
+ 	m_active = 1;
+ 	m_widget->move(m_move_end);
+}
 
 // void eWidgetAnimation::stopMoveAnimation(ePoint start, ePoint end, int length)
 // {
