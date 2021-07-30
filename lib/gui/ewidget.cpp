@@ -4,9 +4,8 @@
 
 extern void dumpRegion(const gRegion &region);
 
-eWidget::eWidget(eWidget *parent): m_animation(this), m_widget(widget), m_parent(parent ? parent->child() : 0)
+eWidget::eWidget(eWidget *parent): m_animation(this), m_parent(parent ? parent->child() : 0)
 {
-	m_active = 0;
 	m_vis = 0;
 	m_layer = 0;
 	m_desktop = 0;
@@ -362,8 +361,6 @@ void eWidget::startMoveAnimation(ePoint start, ePoint end, int length)
 	m_move_length = length;
 	m_move_start = start;
 	m_move_end = end;
-	m_active = 1;
-	m_widget->move(m_move_start);
 }
 
 int eWidget::event(int event, void *data, void *data2)
