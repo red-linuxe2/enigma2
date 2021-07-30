@@ -41,6 +41,8 @@ public:
 	void lower();
 	
 	void animationEnd();
+	void startMoveAnimation();
+	void stopMoveAnimation();
 
 	void destruct();
 
