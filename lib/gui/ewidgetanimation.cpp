@@ -26,8 +26,8 @@ void eWidgetAnimation::tick(int inc)
 		int xdiff = m_move_start.x() - m_move_end.x();
 		int ydiff = m_move_start.y() - m_move_end.y();
 		
-		int xdiff = m_move_stop.x() - m_move_end.x();
-		int ydiff = m_move_stop.y() - m_move_end.y();
+		int adiff = m_move_stop.x() - m_move_end.x();
+		int bdiff = m_move_stop.y() - m_move_end.y();
 
 		xdiff *= 31; xdiff /= 32;
 		ydiff *= 31; ydiff /= 32;
@@ -35,12 +35,17 @@ void eWidgetAnimation::tick(int inc)
 		#if 0
 		xdiff *= m_move_current_tick;
 		xdiff /= m_move_length;
+		adiff *= m_move_current_tick;
+		adiff /= m_move_length;
 
 		ydiff *= m_move_current_tick;
 		ydiff /= m_move_length;
+		bdiff *= m_move_current_tick;
+		bdiff /= m_move_length;
 		#endif
 
 		ePoint res(m_move_end.x() + xdiff, m_move_end.y() + ydiff);
+		ePoint res(m_move_end.a() + adiff, m_move_end.b() + bdiff);
 
 		m_move_current_tick += inc;
 
