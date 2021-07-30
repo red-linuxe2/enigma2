@@ -354,7 +354,7 @@ void eWidget::parentRemoved()
 	m_parent = 0;
 }
 
-void eWidget::startMoveAnimation()
+void eWidget::startMoveAnimation(ePoint start, ePoint end, int length)
 {
  	startMoveAnimation();
 }
