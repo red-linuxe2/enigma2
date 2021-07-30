@@ -4,8 +4,9 @@
 
 extern void dumpRegion(const gRegion &region);
 
-eWidget::eWidget(eWidget *parent): m_animation(this), m_parent(parent ? parent->child() : 0)
+eWidget::eWidget(eWidget *parent): m_animation(this), m_widget(widget), m_parent(parent ? parent->child() : 0)
 {
+	m_active = 0;
 	m_vis = 0;
 	m_layer = 0;
 	m_desktop = 0;
