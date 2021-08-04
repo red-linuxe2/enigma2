@@ -24,12 +24,14 @@ public:
 
 	enum {
 		frameButton,
+		frameCursor,
 		frameListboxEntry
 	};
 
 	enum {
 		fontStatic,
 		fontButton,
+		fontCursor,
 		fontTitlebar
 	};
 };
