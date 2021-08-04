@@ -1,6 +1,5 @@
 #include <lib/gdi/erect.h>
 #include <lib/base/eerror.h>
-#include <atltypes.h>
 
 /*****************************************************************************
   eRect member functions
