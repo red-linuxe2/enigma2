@@ -20,6 +20,7 @@ public:
 	enum {
 		bsWindow,
 		bsButton,
+		bsCursor,
 		bsListboxEntry,
 #ifndef SWIG
 		bsMax
