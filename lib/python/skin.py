@@ -5,7 +5,7 @@ from six import PY2
 from xml.etree.cElementTree import Element, ElementTree, fromstring
 
 from boxbranding import getBoxType
-from enigma import addFont, eLabel, ePixmap, ePoint, eRect, eSize, eWindow, eWindowStyleManager, eWindowStyleSkinned, getDesktop, gFont, getFontFaces, gMainDC, gRGB
+from enigma import addFont, eLabel, ePixmap, ePoint, eRect, eSize, eCursor, eWindow, eWindowStyleManager, eWindowStyleSkinned, getDesktop, gFont, getFontFaces, gMainDC, gRGB
 
 from Components.config import ConfigSubsection, ConfigText, config
 from Components.RcModel import rc_model
@@ -1329,6 +1329,15 @@ def readSkin(screen, skin, names, desktop):
 		w.skinAttributes = []
 		collectAttributes(w.skinAttributes, widget, context, skinPath, ignore=("name",))
 		screen.additionalWidgets.append(w)
+		
+	def process_ecursor(widget, context):
+		n = widget.attrib.get('name')
+		w = additionalWidget()
+		w.widget = eCursor
+		w.skinAttributes = []
+		w.name = n
+		collectAttributes(w.skinAttributes, widget, context, skin_path_prefix, ignore=('name',))
+		screen.additionalWidgets.append(w)		
 
 	def processScreen(widget, context):
 		widgets = widget.getchildren() if PY2 else widget
@@ -1370,6 +1379,7 @@ def readSkin(screen, skin, names, desktop):
 		"widget": processWidget,
 		"applet": processApplet,
 		"eLabel": processLabel,
+		"eCursor": process_ecursor,
 		"ePixmap": processPixmap,
 		"panel": processPanel
 	}
