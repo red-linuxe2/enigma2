@@ -509,7 +509,7 @@ def InitUsageConfig():
 			config.usage.addedinfobar_offposition_y = ConfigNumber(default=0)
 			config.usage.addedinfobar_standartposition_x = ConfigNumber(default=0)
 			config.usage.addedinfobar_standartposition_y = ConfigNumber(default=0)
-        config.misc.query_restart.value = True
+        		config.misc.query_restart.value = True
 
 	config.usage.animation_type.addNotifier(chaneAnimationType)
 	config.usage.infobar_offposition = ConfigNumber(default=720)
