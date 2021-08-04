@@ -221,6 +221,7 @@ typedef long time_t;
 %include <lib/gui/epixmap.h>
 %include <lib/gui/ecanvas.h>
 %include <lib/gui/ebutton.h>
+%include <lib/gui/ecursor.h>
 %include <lib/gui/ewindow.h>
 %include <lib/gui/eslider.h>
 %include <lib/gui/epositiongauge.h>
