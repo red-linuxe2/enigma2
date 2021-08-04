@@ -61,6 +61,7 @@ class MultiColorLabel(Label):
 			foregroundColor = None
 			backgroundColor = None
 			attribs = []
+			label_attribs = []
 			for (attrib, value) in self.skinAttributes:
 				if attrib == "foregroundColors":
 					colors = value.split(',')
@@ -78,6 +79,8 @@ class MultiColorLabel(Label):
 					backgroundColor = value
 				elif attrib == "foregroundColor":
 					foregroundColor = value
+				elif attrib == "borderColor" or "borderWidth":
+					label_attribs.append((attrib, value))					
 				else:
 					attribs.append((attrib, value))
 			if foregroundColor:
