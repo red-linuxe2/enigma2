@@ -165,6 +165,9 @@ RESULT eWindowStyleSimple::getFont(int what, ePtr<gFont> &fnt)
 	case fontButton:
 		fnt = new gFont("Regular", 20);
 		break;
+	case fontCursor:
+		fnt = new gFont("Regular", 20);
+		break;			
 	case fontTitlebar:
 		fnt = new gFont("Regular", 25);
 		break;
